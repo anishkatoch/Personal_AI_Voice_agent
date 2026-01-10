@@ -141,7 +141,7 @@ When the `information` tool is called:
 
 ---
 
-## 📩 PKU Labs – Human-in-the-Loop Integration
+## 📩 POKU Labs – Human-in-the-Loop Integration
 
 Before the call ends:
 
