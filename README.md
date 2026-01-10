@@ -39,8 +39,16 @@ The Retell AI agent is configured using a structured system prompt that defines 
 - Clear pronunciation
 - Context-aware follow-up questions
 
+
+
 ---
 
+
+<img width="913" height="645" alt="Screenshot 2026-01-10 192528" src="https://github.com/user-attachments/assets/57aaf712-fe4f-4263-9faf-2618743af15a" />
+
+
+
+---
 ## 🧠 Knowledge Retrieval Logic
 
 During a conversation, the agent follows this logic:
@@ -129,6 +137,9 @@ When the `information` tool is called:
 5. Query results are formatted into **JSON**  
 6. The JSON response is sent back to Retell AI  
 7. Retell AI converts the response into **natural spoken output**
+
+
+<img width="1737" height="461" alt="Screenshot 2026-01-10 215242" src="https://github.com/user-attachments/assets/65f3dc31-4b23-4e6c-b609-58f6cce8773d" />
 
 ---
 
