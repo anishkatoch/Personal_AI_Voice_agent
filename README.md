@@ -70,7 +70,7 @@ The `information` tool is a backend function defined in Retell AI.
 
 ### Example Tool Input (JSON)
 
-```json
+json
 {
   "query": "user asked question",
   "source": "sql_database"
