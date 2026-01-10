@@ -70,11 +70,51 @@ The `information` tool is a backend function defined in Retell AI.
 
 ### Example Tool Input (JSON)
 
-json
-{
-  "query": "user asked question",
-  "source": "sql_database"
-}
+'''{
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "description": "The customer's email address, any domain allowed."
+    },
+    "products": {
+      "type": "array",
+      "description": "List of products the customer wants a quote for.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string"
+          },
+          "warranty": {
+            "type": "string"
+          },
+          "delivery_days": {
+            "type": "string"
+          },
+          "main_features": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_name",
+          "price",
+          "main_features"
+        ]
+      }
+    }
+  },
+  "required": [
+    "email",
+    "products"
+  ]
+}'''
 
 ---
 
