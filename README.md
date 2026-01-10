@@ -1,14 +1,143 @@
-# Voice_agent
-Aneesh AI Voice Assistant is a test voice agent built with Retell AI and Twilio for inbound calls. It answers questions about my professional profile, collects emails, schedules meetings, and sends call summaries using POKU Labs and Make.com integrations
-
-
-# 🎙️ Aneesh AI Voice Assistant
-
-An AI-powered **voice assistant** built for inbound calls that can talk about my professional background, projects, and experience — and even schedule meetings in real time.
+# # 🎙️ Aneesh AI Voice Assistant
+Aneesh AI Voice Assistant is a test voice agent built with Retell AI and Twilio for inbound calls. It answers questions about my professional profile, collects emails, schedules meetings, and sends call summaries using POKU Labs and Make.com integrations. An AI-powered **voice assistant** built for inbound calls that can talk about my professional background, projects, and experience — and even schedule meetings in real time.
 
 📞 **Call the Aneesh AI Assistant:**  
 ### **+1 (765) 390-2814**  
 *(Test number · limited usage)*
+
+---
+
+## 🧠 Technical Architecture & Integration Details
+
+This voice agent is built using a tool-based, decision-driven architecture where the AI dynamically chooses how to fetch and respond with information during a live call.
+
+---
+
+## 🎯 Retell AI Agent Prompt Design
+
+The Retell AI agent is configured using a structured system prompt that defines **objective, tone, behavior, and tool usage**.
+
+### Agent Objective
+- Act as a professional AI voice assistant
+- Answer questions about my:
+  - Professional summary
+  - Projects
+  - Education
+  - Experience
+- Allow callers to schedule meetings
+- Collect user email politely during the call
+
+### Tone Prompt
+- Friendly, calm, and professional
+- Human-like conversational flow
+- Clear, concise, and confident
+- Polite handling of unknown queries
+
+### Speech Prompt
+- Natural pacing and pauses
+- No robotic responses
+- Clear pronunciation
+- Context-aware follow-up questions
+
+---
+
+## 🧠 Knowledge Retrieval Logic
+
+During a conversation, the agent follows this logic:
+
+1. **Search Knowledge Hub**
+   - Resume data
+   - Professional experience
+   - Projects
+   - Education
+
+2. **If information is NOT found**
+   - Call a custom tool named `information`
+   - Fetch data from external systems (SQL database)
+
+---
+
+## 🔧 Custom Tool: `information`
+
+The `information` tool is a backend function defined in Retell AI.
+
+### Tool Configuration
+- **Tool Name:** `information`
+- **Purpose:** Fetch structured or external data
+- **Trigger Condition:** Knowledge Hub miss
+- **Integration:** Webhook via Make.com
+- **Input / Output:** JSON
+
+### Example Tool Input (JSON)
+
+```json
+{
+  "query": "user asked question",
+  "source": "sql_database"
+}
+
+---
+
+## 🔄 Make.com Automation Workflow
+
+When the `information` tool is called:
+
+1. Retell AI sends a **JSON payload** to a Make.com webhook  
+2. Make.com parses the incoming request  
+3. A **dynamic SQL query** is constructed  
+4. The query is executed against the SQL database  
+5. Query results are formatted into **JSON**  
+6. The JSON response is sent back to Retell AI  
+7. Retell AI converts the response into **natural spoken output**
+
+---
+
+## 🗄️ SQL Database Integration
+
+- Uses **dynamic SQL queries**
+- Query parameters are filled using **user input**
+- Keeps structured data **separate from the LLM**
+- Enables **accurate, controlled, and deterministic responses**
+
+---
+
+## 📩 PKU Labs – Human-in-the-Loop Integration
+
+Before the call ends:
+
+- **PKU Labs** is triggered mid-conversation  
+- Collects the caller’s **email address**  
+- Works as a **human-in-the-loop system**  
+- Integrated with Retell AI using **MCP**  
+- Data is passed instantly **without breaking conversation flow**
+
+---
+
+## 📝 Post-Call Detailed Summary Function
+
+After the call ends, a custom function generates a **detailed call summary**.
+
+### Summary Includes
+- Caller phone number  
+- Caller email address  
+- Conversation summary  
+- User questions  
+- Meeting date & time (if scheduled)
+
+### Output Format
+- **Structured JSON**
+- Sent via **Make.com email automation**
+- Can be stored in a **database** if required
+
+---
+
+## 🔐 System Design Principles
+
+- Tool-based reasoning to **avoid hallucinations**
+- **Knowledge-first, database-second** approach
+- Clear separation of **AI, automation, and data layers**
+- Scalable design for **complex voice agents**
+- **Cost-aware** testing setup
 
 ---
 
