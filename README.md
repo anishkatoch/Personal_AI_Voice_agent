@@ -150,6 +150,12 @@ When the `information` tool is called:
 - Keeps structured data **separate from the LLM**
 - Enables **accurate, controlled, and deterministic responses**
 
+
+
+<img width="926" height="435" alt="Screenshot 2026-01-10 192605" src="https://github.com/user-attachments/assets/66adfc02-9832-4fea-b149-219c07448e56" />
+
+
+
 ---
 
 ## 📩 POKU Labs – Human-in-the-Loop Integration
