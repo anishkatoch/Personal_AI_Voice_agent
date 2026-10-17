@@ -3,7 +3,7 @@ Aneesh AI Voice Assistant is a test voice agent built with Retell AI and Twilio 
 
 
 📞 **Call the Aneesh AI Assistant:**  
-### **+1 (765) 390-2814**  
+### **+1 (361) 282-4535**
 *(Test number · limited usage)*
 
 ---
@@ -206,6 +206,7 @@ After the call ends, a custom function generates a **detailed call summary**.
 ✅ Collects **email address** during the call  
 ✅ Schedules **meetings live on call**  
 ✅ Sends **detailed call summary via email**
+✅ Integrated **Cal.com** for live calendar availability checks, meeting booking, rescheduling & cancellation
 
 ---
 
@@ -215,7 +216,8 @@ After the call ends, a custom function generates a **detailed call summary**.
 - **Twilio** – Inbound calling number  
 - **Knowledge Hub** – Resume & professional data  
 - **PKU Labs** – Mid-call data collection (email, meeting info)  
-- **Make.com** – Automation, SQL DB & email workflows  
+- **Make.com** – Automation, SQL DB & email workflows
+- **Cal.com** – Calendar availability, meeting booking, rescheduling & cancellation
 
 ---
 
@@ -254,4 +256,4 @@ Call the number and ask about:
 - My education  
 - Scheduling a meeting  
 
-📞 **+1 (765) 390-2814**
+📞 **+1 (361) 282-4535**
