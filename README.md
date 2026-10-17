@@ -6,14 +6,14 @@
 [![Scheduling](https://img.shields.io/badge/Scheduling-Cal.com-292929)](#-tech-stack--integrations)
 [![Status](https://img.shields.io/badge/Status-Demo%20%2F%20Limited%20Usage-orange)](#️-note)
 
-An AI-powered **voice assistant** for inbound calls that talks about my professional background, projects, and experience — and can schedule meetings live, during the call.
+An AI-powered **voice assistant** for inbound calls that talks about my professional background, projects, and experience, and can schedule meetings live, during the call.
 
 Built with **Retell AI** + **Twilio** for the call layer, backed by a **Knowledge Hub → SQL fallback** reasoning chain, **Make.com** automation, **POKU Labs** for human-in-the-loop email capture, and **Cal.com** for real scheduling.
 
 <div align="center">
 
 ### 📞 Call the Assistant: **+1 (361) 282-4535**
-*(Test number · limited usage — see [Note](#️-note))*
+*(Test number · limited usage, see [Note](#️-note))*
 
 </div>
 
@@ -123,8 +123,8 @@ The Retell AI agent is configured using a structured system prompt that defines 
 
 During a conversation, the agent follows this decision order:
 
-1. **Search Knowledge Hub** — resume data, professional experience, projects, education.
-2. **If information is NOT found** — call the custom tool `information` and fetch data from external systems (SQL database).
+1. **Search Knowledge Hub**: resume data, professional experience, projects, education.
+2. **If information is NOT found**: call the custom tool `information` and fetch data from external systems (SQL database).
 
 This keeps answers **fast and cheap** when the Knowledge Hub already has the answer, and falls back to **live, deterministic data** only when needed.
 
